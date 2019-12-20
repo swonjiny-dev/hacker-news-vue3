@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <center>
+      <table id="hnmain" border="0" cellpadding="0" cellspacing="0" width="85%" bgcolor="#f6f6ef">
+        <tbody>
+          <tr>
+              <td bgcolor="#ff6600">
+                <tool-bar></tool-bar>
+              </td>
+          </tr>
+          <tr id="pagespace" title="Ask" style="height:10px"></tr>
+          <tr>
+            <td>
+              <transition name="fade">
+              <router-view></router-view>
+              </transition>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </center>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import ToolBar from "./components/ToolBar";
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  components : {
+    ToolBar
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
