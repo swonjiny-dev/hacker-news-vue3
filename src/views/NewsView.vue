@@ -5,7 +5,7 @@
         <main-list :key="`${item.id}main`" :item="item" :index="(index)+1"></main-list>
         <sub-list :key="`${item.id}sub`" :item="item"></sub-list>
       </template> 
-      <tr><td colspan="2"></td><td class="title"><a href="newest?next=21840767&amp;n=31" class="morelink" rel="next">More</a></td></tr>
+      <tr><td colspan="2"></td><td class="title"><a :href="`/news/${nextPage}`" class="morelink" rel="next">More</a> </td></tr>
     </tbody>
   </table>
 </template>
@@ -38,11 +38,15 @@ export default {
   computed: {
     ...mapGetters([
       'fetchNews']),
+      nextPage : function(){
+        return Number.parseInt(this.$route.params.page)+Number.parseInt(1);
+      }
+
   },
   components : {
     MainList,
     SubList,
-  }
+  },
 }
 </script>
 

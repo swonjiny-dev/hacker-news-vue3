@@ -13,7 +13,7 @@ export default new Vuex.Store({
         ask : [],
         show : [],
         jobs : [],
-        page : 3,
+        page : 1,
     },
     getters,
     mutations,

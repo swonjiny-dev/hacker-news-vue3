@@ -14,4 +14,7 @@ export default {
     fetchJobs(state){
         return state.jobs;
     },
+    fetchPage(state){
+        return state.page;
+    }
 }
